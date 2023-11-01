@@ -41,7 +41,8 @@
                 toEl.removeAttribute(attr.name.substring(
                     1)); // Remove the corresponding actual attribute.
                 toEl.removeAttribute(attr
-                .name); // Remove the attribute with the '!' prefix if it exists from initial render.
+                    .name
+                ); // Remove the attribute with the '!' prefix if it exists from initial render.
             }
         });
     });
