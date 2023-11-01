@@ -8,6 +8,20 @@
     <title>{{ $title ?? 'Page Title' }}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/themes/light.css" />
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/shoelace-autoloader.js"></script>
+    <style>
+        body {
+            font-family: var(--sl-input-font-family);
+            padding: 48px 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        sl-card,
+        sl-card::part(base),
+        sl-card::part(body) {
+            height: 100%;
+        }
+    </style>
 </head>
 
 <body>
