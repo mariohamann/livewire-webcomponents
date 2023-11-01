@@ -10,10 +10,24 @@
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/shoelace-autoloader.js"></script>
     <style>
         body {
+            background-color: var(--sl-color-neutral-100);
             font-family: var(--sl-input-font-family);
             padding: 48px 32px;
             max-width: 1200px;
             margin: 0 auto;
+            opacity: 0;
+        }
+
+        body.ready {
+            opacity: 1;
+            transition: .25s opacity;
+        }
+
+        .cards {
+            margin-top: 48px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
         }
 
         sl-card,
@@ -22,9 +36,19 @@
             height: 100%;
         }
     </style>
+    <script type="module">
+  await Promise.allSettled([
+    customElements.whenDefined('sl-card')
+  ]);
+
+  // Button, card, and rating are registered now! Add
+  // the `ready` class so the UI fades in.
+  document.body.classList.add('ready');
+</script>
 </head>
 
 <body>
+    <h1>Livewire x Web Components</h1>
     {{ $slot }}
 </body>
 
