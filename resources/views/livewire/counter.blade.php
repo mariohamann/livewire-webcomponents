@@ -3,8 +3,8 @@
 
         <div>
             <h2>sl-button</h2>
-            <sl-button wire:click="increment" @ifDefined('disabled', $count> 99)>+</sl-button>
-            <sl-button wire:click="decrement" @ifDefined('disabled', $count < 1)>-</sl-button>
+            <sl-button wire:click="increment" @wcSetAttribute('disabled', $count > 99)>+</sl-button>
+            <sl-button wire:click="decrement" @wcSetAttribute('disabled', $count < 1)>-</sl-button>
             <p>
                 <sl-progress-bar value={{ $count }} label="Upload progress"></sl-progress-bar>
             </p>

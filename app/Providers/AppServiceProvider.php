@@ -39,7 +39,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         // Sets an attribute if the value is defined and removes the attribute if undefined.
-        Blade::directive('ifDefined', function ($arguments) {
+        Blade::directive('wcSetAttribute', function ($arguments) {
             list($attribute, $condition) = explode(',', $arguments);
             $attribute = trim(str_replace(['"', "'"], '', $attribute));
             $condition = trim($condition);
