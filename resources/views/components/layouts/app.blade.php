@@ -59,16 +59,16 @@
         toEl
     }) => {
         // Store the original attributes.
-        let originalAttributes = Array.from(el.attributes)
+        let oldAttributes = Array.from(el.attributes)
             .reduce((attrs, attr) => {
                 attrs[attr.name] = attr.value;
                 return attrs;
             }, {});
 
         // Restore all attributes that might have been removed by Livewire.
-        let currentAttributes = Array.from(toEl.attributes).map(attr => attr.name);
-        Object.entries(originalAttributes).forEach(([name, value]) => {
-            if (!name.startsWith('!') && !currentAttributes.includes(name)) {
+        let newAttributes = Array.from(toEl.attributes).map(attr => attr.name);
+        Object.entries(oldAttributes).forEach(([name, value]) => {
+            if (!name.startsWith('!') && !newAttributes.includes(name)) {
                 toEl.setAttribute(name, value);
             }
         });
