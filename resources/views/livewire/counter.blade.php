@@ -26,13 +26,11 @@
     </sl-card>
     <sl-card>
         <h2>sl-select</h2>
-        <div>
-            <sl-select @slSelectModel('selected', $selected)>
-                <sl-option value="1">Option 1</sl-option>
-                <sl-option value="2">Option 2</sl-option>
-                <sl-option value="3">Option 3</sl-option>
-            </sl-select>
-        </div>
+        <sl-select @slSelectModel('selected', $selected)>
+            <sl-option value="1">Option 1</sl-option>
+            <sl-option value="2">Option 2</sl-option>
+            <sl-option value="3">Option 3</sl-option>
+        </sl-select>
         <p slot="footer">Server result: <strong>{{ $selected }}</strong></p>
     </sl-card>
     <sl-card>
