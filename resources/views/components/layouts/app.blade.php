@@ -58,6 +58,11 @@
         component,
         toEl
     }) => {
+        // Check if element is a custom element;
+        if (!el.tagName.includes('-')) {
+            return;
+        }
+
         // Store the original attributes.
         let oldAttributes = Array.from(el.attributes)
             .reduce((attrs, attr) => {
