@@ -25,9 +25,9 @@ This project tackles several key issues:
 
 A live demo of this integration can be seen here: [livewire-webcomponents.mariohamann.com](https://livewire-webcomponents.mariohamann.com)
 
-## Complementary Article
+## Complementary Article + Discussion
 
-For an in-depth explanation and reflection on the process, challenges, and solutions for integrating Livewire with Web Components, check out the complementary article here: [mariohamann.com/livewire-web-components-attributes](https://mariohamann.com/livewire-web-components-attributes)
+For an in-depth explanation and reflection on the process, challenges, and solutions for integrating Livewire with Web Components, check out the complementary [article on my website](https://mariohamann.com/livewire-web-components-attributes) and [discussion on Mastodon](https://indieweb.social/@mariohamann/111345589522474076)
 
 ## Contributing
 
