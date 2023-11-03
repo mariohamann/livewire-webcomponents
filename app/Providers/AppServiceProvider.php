@@ -20,6 +20,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Sets an attribute if the value is defined and removes the attribute if undefined.
+        Blade::directive('wcSetAttribute', function ($arguments) {
+            list($attribute, $condition) = explode(',', $arguments);
+            $attribute = trim(str_replace(['"', "'"], '', $attribute));
+            $condition = trim($condition);
+            return "<?php echo {$condition} ? '{$attribute}' : '!{$attribute}' ?>";
+        });
+
         // Creates a model binding for sl-checkbox
         Blade::directive('slCheckboxModel', function ($arguments) {
             list($expression, $value) = explode(',', str_replace([' ', '"', "'"], '', $arguments));
@@ -36,14 +44,6 @@ class AppServiceProvider extends ServiceProvider
         Blade::directive('slSelectModel', function ($arguments) {
             list($expression, $value) = explode(',', str_replace([' ', '"', "'"], '', $arguments));
             return "value=\"<?php echo is_array({$value}) ? implode(' ', {$value}) : {$value}; ?>\" x-on:sl-change=\"\$wire.set('{$expression}', \$el.value);\"";
-        });
-
-        // Sets an attribute if the value is defined and removes the attribute if undefined.
-        Blade::directive('wcSetAttribute', function ($arguments) {
-            list($attribute, $condition) = explode(',', $arguments);
-            $attribute = trim(str_replace(['"', "'"], '', $attribute));
-            $condition = trim($condition);
-            return "<?php echo {$condition} ? '{$attribute}' : '!{$attribute}' ?>";
         });
     }
 }

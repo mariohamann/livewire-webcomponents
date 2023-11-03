@@ -7,7 +7,8 @@
 
     <title>{{ $title ?? 'Page Title' }}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/themes/light.css" />
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/shoelace-autoloader.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/shoelace-autoloader.js">
+    </script>
     <style>
         body {
             background-color: var(--sl-color-neutral-100);
@@ -37,14 +38,14 @@
         }
     </style>
     <script type="module">
-  await Promise.allSettled([
-    customElements.whenDefined('sl-card')
-  ]);
+        await Promise.allSettled([
+            customElements.whenDefined('sl-card')
+        ]);
 
-  // Button, card, and rating are registered now! Add
-  // the `ready` class so the UI fades in.
-  document.body.classList.add('ready');
-</script>
+        // Button, card, and rating are registered now! Add
+        // the `ready` class so the UI fades in.
+        document.body.classList.add('ready');
+    </script>
 </head>
 
 <body>
